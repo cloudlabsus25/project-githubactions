@@ -1,1 +1,1 @@
-checking merge conflict
+editing file2 to demo merge conflict
