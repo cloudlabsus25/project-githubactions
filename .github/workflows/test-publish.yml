@@ -22,18 +22,23 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: nodejs-motivatorapp
         run: npm install
 
       - name: Run Linting
+        working-directory: nodejs-motivatorapp
         run: npx eslint .
 
       - name: Run Tests
-        run: npm test  # Add tests before enabling this step
+        working-directory: nodejs-motivatorapp
+        run: npm test
 
       - name: Build the package
+        working-directory: nodejs-motivatorapp
         run: npm pack
 
       - name: Publish to JFrog Artifactory
+        working-directory: nodejs-motivatorapp
         env:
           JFROG_USER: ${{ secrets.JFROG_USER }}
           JFROG_PASSWORD: ${{ secrets.JFROG_PASSWORD }}
